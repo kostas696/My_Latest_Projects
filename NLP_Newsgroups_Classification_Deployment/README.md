@@ -34,7 +34,7 @@ The project follows these steps:
 ### Prerequisites
 - Python 3.7+
 - Required libraries listed in requirements.txt
-- 
+  
 ### Installation
 - Clone the repository:
 git clone https://github.com/kostas696/My_Latest_Projects/edit/main/NLP_Newsgroups_Classification_Deployment.git
