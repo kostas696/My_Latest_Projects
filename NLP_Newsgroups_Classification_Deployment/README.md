@@ -57,7 +57,7 @@ These metrics indicate robust performance in classifying documents across differ
 - Word Clouds: Visualize the most common words in each newsgroup.
 - Confusion Matrix: Understand the model’s performance in each category.
 - Learning Curve: Assess how the model improves with more training data.
-- 
+  
 ## Conclusion
 This project demonstrates how natural language processing and machine learning techniques can be effectively combined to create a powerful document classification system. The deployed model offers real-time predictions and shows high performance across different categories.
 
