@@ -1,5 +1,3 @@
-# Midterm Project
-
 ## Gym Members Calories Prediction with CatBoost
 
 ---
