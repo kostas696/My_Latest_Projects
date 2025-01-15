@@ -14,6 +14,7 @@ This repository contains a collection of my latest data science and machine lear
 7. [Cab Industry Analysis: Data Exploration, Hypothesis Testing, and Strategic Recommendations](#cab-industry-analysis-data-exploration-hypothesis-testing-and-strategic-recommendations)
 8. [New York Housing Market Analysis and Price Prediction](#new-york-housing-market-analysis-and-price-prediction)
 9. [Gym Members Calories Prediction with CatBoost](#gym-members-calories-prediction-with-catboost)
+10. [Air Quality Prediction](#air-quality-prediction-and-deployment)
 
 ---
 
@@ -109,4 +110,20 @@ Achieved a low RMSE of 8.13, indicating high prediction accuracy.
 Deployed a scalable web service for real-time calorie predictions.
 Enhanced personalized fitness tracking and provided actionable insights for gym members.
 
+---
 
+### Air Quality Prediction and Deployment
+- **Description**: Developed and deployed a machine learning-based system to predict air quality levels using a dataset of environmental and demographic metrics. The project included extensive data preprocessing, exploratory data analysis, model selection, and hyperparameter tuning. The final solution was deployed as a web service using FastAPI, Docker, and Kubernetes, with integrated monitoring via Prometheus and Grafana. The deployed application provides real-time air quality predictions, enabling actionable insights for governments, industries, and individuals to mitigate the effects of air pollution.
+
+- **Technologies Used**: Python, pandas, Seaborn, Scikit-learn, CatBoost, XGBoost, LightGBM, FastAPI, Docker, Kubernetes, Prometheus, Grafana, Render
+
+- **Techniques**: Class Imbalance Handling, Weighted Metrics (Weighted F1-Score), Feature Engineering, Optuna Hyperparameter Tuning, Containerization, Cloud Deployment, Monitoring
+
+- **Key Impact**:
+Achieved a high Weighted F1-Score of 0.9578 using the CatBoost model, demonstrating its effectiveness in handling imbalanced datasets and predicting critical air quality levels.
+Identified key environmental factors like Carbon Monoxide (CO) and proximity to industrial areas as major contributors to poor air quality.
+Successfully deployed the application in a production environment, offering an interactive API for real-time air quality predictions.
+Integrated monitoring tools (Prometheus and Grafana) for tracking service performance and usage metrics, ensuring reliability and transparency.
+Provided actionable insights to stakeholders for improving public health and environmental policies.
+
+---
