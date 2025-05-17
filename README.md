@@ -139,13 +139,9 @@ Provided actionable insights to stakeholders for improving public health and env
 - **Key Impact**:
 Used threshold calibration (0.103) to significantly improve model decision-making under extreme class imbalance.
 Final calibrated model achieved:
-
-F1 Score: 0.203
-
-Precision: 0.152
-
-Recall: 0.304
-
+F1 Score: 0.203,
+Precision: 0.152,
+Recall: 0.304.
 Identified 56 high-confidence mortgage prospects from a pool of 2,747 new potential customers.
 Delivered a data-driven lead scoring file (potential_df_scored.csv) for CRM teams to prioritize outreach.
 
