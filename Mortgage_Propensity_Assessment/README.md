@@ -1,3 +1,4 @@
+
 # Mortgage Propensity Assessment
 
 ## Problem Statement
@@ -70,24 +71,25 @@ Three models were compared using **Stratified K-Fold Cross-Validation**:
 
 ---
 
-## Threshold Calibration
+## 🔧 Calibration & Threshold Optimization
 
-To improve **real-world performance**, we tuned the decision threshold using the **precision-recall curve**.
+To improve real-world utility, we **calibrated the predicted probabilities** using **isotonic regression**. This made scores interpretable (e.g. a 0.30 score ≈ 30% actual chance) and improved F1 performance.
 
 | Metric     | Value |
 |------------|-------|
-| Threshold  | 0.881 |
-| Precision  | 0.853 |
-| Recall     | 0.987 |
-| F1 Score   | 0.915 |
+| **Calibrated Threshold**  | **0.103** |
+| **Precision**  | 18.0% |
+| **Recall**     | ~33% |
+| **F1 Score**   | 0.20 |
+| **PR AUC**     | 0.108 |
 
 ---
 
 ## 🔍 Inference on Potential Customers
 
-- The final CatBoost model was applied to `potential_df`
-- Only **11 out of 2,747** customers were flagged as **high-probability mortgage prospects**
-- These leads can now be prioritized by the Customer Relationship Management team
+- The calibrated CatBoost model was applied to `potential_df`
+- Using the new threshold, **56 out of 2,747** customers were flagged as **likely mortgage prospects**
+- These leads are sorted by calibrated probability and ready for CRM outreach
 
 Output file: `output/potential_df_scored.csv`
 
@@ -102,7 +104,7 @@ Output file: `output/potential_df_scored.csv`
 |-- models
 |   `-- encoder_retail.pkl
 |-- notebook
-|   `-- Raiffeisen_assessment.ipynb
+|   `-- notebook.ipynb
 |-- output
 |   `-- potential_df_scored.csv
 |-- presentation
@@ -119,13 +121,12 @@ Output file: `output/potential_df_scored.csv`
 ## Key Takeaways
 
 - Handled data quality, imbalance, and modeling from end to end
-- Used advanced threshold tuning to boost precision without sacrificing recall
-- Delivered 11 highly confident leads for targeted CRM outreach
+- Applied **probability calibration** for better interpretability and decision-making
+- Tuned threshold to **maximize F1 score**, balancing precision and recall
+- Delivered a **shortlist of 56 actionable leads** for targeted CRM follow-up
 
 ---
 
 ## Author
-Konstantinos Soufleros  
+**Konstantinos Soufleros**  
 Certified Data Scientist | [GitHub](https://github.com/kostas696)
-
----
