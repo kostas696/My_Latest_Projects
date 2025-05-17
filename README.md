@@ -15,6 +15,9 @@ This repository contains a collection of my latest data science and machine lear
 8. [New York Housing Market Analysis and Price Prediction](#new-york-housing-market-analysis-and-price-prediction)
 9. [Gym Members Calories Prediction with CatBoost](#gym-members-calories-prediction-with-catboost)
 10. [Air Quality Prediction](#air-quality-prediction-and-deployment)
+11. [Mortgage Propensity Assessment](#mortgage-propensity-assessment)
+12. [Crypto Streaming Pipeline: Real-Time Crypto Price Dashboard](#crypto-streaming-pipeline-real-time-crypto-price-dashboard)
+13. [AI-Powered Log Analysis – GCP vs. Local LLM (Case Study)](#ai-powered-log-analysis--gcp-vs-local-llm-case-study)
 
 ---
 
@@ -127,3 +130,45 @@ Integrated monitoring tools (Prometheus and Grafana) for tracking service perfor
 Provided actionable insights to stakeholders for improving public health and environmental policies.
 
 ---
+
+### Mortgage Propensity Assessment
+- **Description**: Built a predictive pipeline to identify high-propensity mortgage customers using labeled retail banking data. The project addressed significant class imbalance (only 1.3% positive class), engineered domain-specific features (e.g., years at current address/job), handled complex date parsing and placeholder values (e.g., 9999-10-01), and applied isotonic calibration with threshold tuning for optimal F1 performance. Inference was performed on a new set of prospects to guide CRM targeting.
+
+- **Technologies Used**: Python, Pandas, NumPy, Scikit-learn, CatBoost, Optuna, SHAP, CalibratedClassifierCV, Matplotlib
+
+- **Key Impact**:
+Used threshold calibration (0.103) to significantly improve model decision-making under extreme class imbalance.
+Final calibrated model achieved:
+
+F1 Score: 0.203
+
+Precision: 0.152
+
+Recall: 0.304
+
+Identified 56 high-confidence mortgage prospects from a pool of 2,747 new potential customers.
+Delivered a data-driven lead scoring file (potential_df_scored.csv) for CRM teams to prioritize outreach.
+
+---
+
+### Crypto Streaming Pipeline: Real-Time Crypto Price Dashboard
+- **Description**: Designed and deployed a real-time data streaming pipeline using Google Cloud Platform (GCP) to process live cryptocurrency prices from the OKX WebSocket API. The pipeline includes ingestion via Dockerized Kafka producers, storage in Google Cloud Storage (GCS), transformation using Apache Spark, warehousing in BigQuery, and dynamic dashboard visualization in Looker Studio. The solution is orchestrated using Airflow running on a GCE VM, and infrastructure is provisioned with Terraform.
+
+- **Technologies Used**: Python, Apache Kafka, Apache Spark, Airflow, Google Cloud Platform (GCS, BigQuery, GCE), Looker Studio, Docker, Terraform
+
+- **Key Impact**:
+Enabled real-time collection and processing of crypto market data using a scalable, fault-tolerant architecture.
+Deployed a dynamic Looker Studio dashboard to visualize pricing trends and volume insights per crypto asset.
+Automated infrastructure provisioning and data pipeline execution using Terraform and Airflow, ensuring reproducibility and maintainability.
+
+---
+
+### AI-Powered Log Analysis – GCP vs. Local LLM (Case Study)
+- **Description**: Conducted a comparative case study of two approaches to intelligent log analysis and AI-powered root cause resolution. The first solution leverages Google Cloud’s serverless architecture with Vertex AI and Cloud Run for real-time triage. The second solution runs fully locally using a Dockerized EFK stack (Elasticsearch, Filebeat, Kibana) and a local Ollama instance of the LLaMA 3.2 model. Both setups parse ERROR logs and invoke LLMs to generate human-readable explanations and fixes, offering scalable and offline alternatives.
+
+- **Technologies Used**: Vertex AI (Gemini 2.0), Cloud Run, Pub/Sub, Google Cloud Logging, Flask, Ollama, LLaMA 3.2, Docker, Elasticsearch, Filebeat, Kibana, Python
+
+- **Key Impact**:
+Demonstrated real-time AI log triage pipeline on GCP using Vertex AI and Cloud-native triggers.
+Built an open-source, local alternative using the EFK stack and Ollama for offline inference.
+Delivered a comprehensive feature comparison, identified performance and scalability trade-offs, and proposed enhancements including agent-based remediation and RAG pipelines for logs.

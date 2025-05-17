@@ -1,0 +1,29 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - /logs/*.log
+    scan_frequency: 10s
+
+output.elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+
+setup.kibana:
+  host: "http://kibana:5601"
+
+logging.level: info
+logging.to_files: true
+logging.files:
+  path: /usr/share/filebeat/logs
+  name: filebeat
+  keepfiles: 7
+  permissions: 0644
+  rotateeverybytes: 10485760
+  numberoffiles: 7
+  json:
+    enabled: false
+    pretty: false
+    add_error_key: true
+    keys_under_root: true
+    overwrite_keys: false
+  add_caller: false

@@ -1,0 +1,15 @@
+
+pandas
+numpy==1.24
+scikit-learn
+xgboost
+catboost
+matplotlib
+seaborn
+imbalanced-learn
+shap
+optuna
+jupyter
+ydata-profiling
+ydata-profiling[notebook]
+sweetviz
